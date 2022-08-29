@@ -1,6 +1,6 @@
 let form = document.getElementById("form");
-// localStorage.clear();
 
+// localStorage.clear();
 // let Entries = [];
 
 const retriveEntries = () => {
@@ -21,14 +21,13 @@ const displayEntries = () => {
 
   const rows = entries
     .map((entry) => {
-      // const name = `<td class="td">${entry.name}</td>`;
+      const name = `<td class="td">${entry.name}</td>`;
       const email = `<td class="td">${entry.email}</td>`;
       const password = `<td class="td">${entry.password}</td>`;
       const dob = `<td class="td">${entry.dob}</td>`;
       const accseptConditions = `<td class="td">${entry.accseptConditions}</td>`;
 
-      const row = `<tr>${email} ${password} ${dob} ${accseptConditions}</tr>`;
-      // ${name} for name in row add this
+      const row = `<tr>${name} ${email} ${password} ${dob} ${accseptConditions}</tr>`;
       return row;
     })
     .join("\n");
@@ -38,6 +37,7 @@ const displayEntries = () => {
   // <th class="th">Name</th> inside oneMore head for name
   tableDiv.innerHTML = `<table class="table" border="2">
   <tr>
+    <th class="th">Name</th>
     <th class="th">Email</th>
     <th class="th">Password</th>
     <th class="th">Dob</th>
